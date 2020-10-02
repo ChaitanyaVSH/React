@@ -20,7 +20,8 @@ const BioData = () => {
 
     if (hours < 12) timeNow = "Morning";
     else if (hours >= 12 && hours < 17) timeNow = "afternoon";
-    else timeNow = "evening";
+    else if (hours >= 17 && hours < 20) timeNow = "evening";
+    else timeNow = "night";
 
     return timeNow;
   }

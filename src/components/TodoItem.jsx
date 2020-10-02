@@ -15,7 +15,7 @@ const TodoItem = (props) => {
   return (
     <div style={TodoItemStyles}>
       <span>
-        <input type="checkbox"></input>
+        <input type="checkbox" style={{ marginRight: 10 }}></input>
       </span>
       <span> This is the todoItem</span>
     </div>

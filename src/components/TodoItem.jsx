@@ -4,8 +4,13 @@ const TodoItem = (props) => {
   const TodoItemStyles = {
     margin: 10,
     padding: 15,
-    borderLeft: "3px solid lightblue",
+    borderLeft:
+      props.completed === "true"
+        ? "5px solid lightblue"
+        : "5px solid lightgreen",
   };
+
+  console.log(props);
 
   return (
     <div style={TodoItemStyles}>

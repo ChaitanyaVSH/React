@@ -7,10 +7,10 @@ class Wrapper extends Component {
   render() {
     return (
       <div className="wrapper">
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
+        <TodoItem completed="true" />
+        <TodoItem completed="true" />
+        <TodoItem completed="false" />
+        <TodoItem completed="true" />
       </div>
     );
   }

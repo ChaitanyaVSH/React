@@ -1,10 +1,11 @@
 import React from "react";
+import "../components/footerStyles.css";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
-        <span className="text-muted">Place sticky footer content here.</span>
+        <span>Chaitanya &copy; 2020</span>
       </div>
     </footer>
   );

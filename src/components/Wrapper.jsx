@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import TodoItem from "./TodoItem";
 import "../components/wrapperStyles.css";
 
 class Wrapper extends Component {
@@ -6,22 +7,10 @@ class Wrapper extends Component {
   render() {
     return (
       <div className="wrapper">
-        <div>
-          <input type="checkbox"></input>
-          <span> This is the todo</span>
-        </div>
-        <div>
-          <input type="checkbox"></input>
-          <span> This is the todo</span>
-        </div>
-        <div>
-          <input type="checkbox"></input>
-          <span> This is the todo</span>
-        </div>
-        <div>
-          <input type="checkbox"></input>
-          <span> This is the todo</span>
-        </div>
+        <TodoItem />
+        <TodoItem />
+        <TodoItem />
+        <TodoItem />
       </div>
     );
   }

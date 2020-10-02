@@ -9,19 +9,33 @@ import { v4 as uuid } from "uuid";
 class App extends Component {
   state = {
     todos: [
-      { desc: "", completed: true },
-      { desc: "", completed: true },
-      { desc: "", completed: true },
-      { desc: "", completed: true },
-      { desc: "", completed: true },
+      { desc: "Do not give up on this", completed: true },
+      { desc: "Slow and steady wins the race", completed: false },
+      { desc: "Work hard", completed: true },
+      { desc: "One Day you will be the CEO", completed: true },
+      { desc: "All this came true", completed: true },
     ],
   };
+
+  handleSubmit = (todoDesc) => {
+    const newTodo = {
+      desc: todoDesc,
+      completed: true,
+    };
+
+    const todos = [...this.state.todos, newTodo];
+
+    this.setState({
+      todos: todos,
+    });
+  };
+
   render() {
     return (
       <div>
         <BioData />
-        <AddTodo />
-        <Wrapper />
+        <AddTodo onSubmit={this.handleSubmit} />
+        <Wrapper todos={this.state.todos} />
       </div>
     );
   }

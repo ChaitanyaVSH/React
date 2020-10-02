@@ -5,7 +5,7 @@ const TodoItem = (props) => {
     margin: 10,
     padding: 15,
     borderLeft:
-      props.completed === "true"
+      props.todo.completed === true
         ? "5px solid lightblue"
         : "5px solid lightgreen",
   };
@@ -17,7 +17,7 @@ const TodoItem = (props) => {
       <span>
         <input type="checkbox" style={{ marginRight: 10 }}></input>
       </span>
-      <span> This is the todoItem</span>
+      <span>{props.todo.desc}</span>
     </div>
   );
 };

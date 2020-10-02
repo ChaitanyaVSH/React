@@ -7,10 +7,9 @@ class Wrapper extends Component {
   render() {
     return (
       <div className="wrapper">
-        <TodoItem completed="true" />
-        <TodoItem completed="true" />
-        <TodoItem completed="false" />
-        <TodoItem completed="true" />
+        {this.props.todos.map((todoItem) => (
+          <TodoItem completed="false" todo={todoItem} />
+        ))}
       </div>
     );
   }

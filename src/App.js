@@ -1,11 +1,19 @@
 import React, { Component } from "react";
 import "./App.css";
-import BioData from "./components/first";
+import BioData from "./components/NavBar";
+import Footer from "./components/Footer";
+import Wrapper from "./components/Wrapper";
 
 class App extends Component {
   state = {};
   render() {
-    return <BioData />;
+    return (
+      <div>
+        <BioData />
+        <Wrapper />
+        <Footer />
+      </div>
+    );
   }
 }
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-const BioData = () => {
+const BioData = (props) => {
   var timeNow = calculateTimeNow();
 
   return (
@@ -13,6 +13,7 @@ const BioData = () => {
           Hey, <br /> Good {timeNow} <br /> Chaitu Maverick
         </h1>
         <p>Affirm the good and the bad will vanish...!</p>
+        <h3>There are {props.totalTodos} items in your checklist</h3>
       </div>
     </div>
   );

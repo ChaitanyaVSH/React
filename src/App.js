@@ -54,7 +54,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <BioData />
+        <BioData totalTodos={this.state.todos.length} />
         <AddTodo onSubmit={this.handleSubmit} />
         {this.returnWrapper()}
       </div>

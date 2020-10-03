@@ -3,7 +3,7 @@ import "../components/addTodo.css";
 
 class AddTodo extends Component {
   state = {
-    text: "",
+    desc: "",
   };
 
   onChange = (e) => {
@@ -12,12 +12,11 @@ class AddTodo extends Component {
     });
   };
 
-  onClick = (e) => {
-    e.preventDefault();
-    const todoDesc = this.state.text;
+  onClick = () => {
+    const todoDesc = this.state.desc;
     this.props.onSubmit(todoDesc);
     this.setState({
-      text: "",
+      desc: "",
     });
   };
 
@@ -27,10 +26,10 @@ class AddTodo extends Component {
         <div>
           <input
             type="text"
-            name="text"
+            name="desc"
             placeholder="Add a ToDo"
             onChange={this.onChange}
-            value={this.state.text}
+            value={this.state.desc}
           />
           <button id="submit-book" onClick={this.onClick}>
             Submit

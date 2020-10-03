@@ -3,12 +3,15 @@ import TodoItem from "./TodoItem";
 import "../components/wrapperStyles.css";
 
 class Wrapper extends Component {
-  state = {};
   render() {
     return (
       <div className="wrapper">
         {this.props.todos.map((todoItem) => (
-          <TodoItem completed="false" todo={todoItem} />
+          <TodoItem
+            todo={todoItem}
+            key={todoItem.id}
+            finished={this.props.onFinish}
+          />
         ))}
       </div>
     );

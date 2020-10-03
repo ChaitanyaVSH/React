@@ -10,13 +10,15 @@ class AddTodo extends Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
-    this.setState({ text: "" });
   };
 
   onClick = (e) => {
     e.preventDefault();
-    this.props.onSubmit(this.state.text);
-    this.setState({ text: "" });
+    const todoDesc = this.state.text;
+    this.props.onSubmit(todoDesc);
+    this.setState({
+      text: "",
+    });
   };
 
   render() {
@@ -28,6 +30,7 @@ class AddTodo extends Component {
             name="text"
             placeholder="Add a ToDo"
             onChange={this.onChange}
+            value={this.state.text}
           />
           <button id="submit-book" onClick={this.onClick}>
             Submit

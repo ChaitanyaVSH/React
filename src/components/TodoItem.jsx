@@ -1,25 +1,41 @@
-import React from "react";
+import React, { Component } from "react";
 
-const TodoItem = (props) => {
-  const TodoItemStyles = {
-    margin: 10,
-    padding: 15,
-    borderLeft:
-      props.todo.completed === true
-        ? "5px solid lightblue"
-        : "5px solid lightgreen",
+class TodoItem extends Component {
+  state = {};
+
+  getStyles() {
+    return {
+      margin: 10,
+      padding: 15,
+      borderLeft:
+        this.props.todo.completed === true
+          ? "5px solid lightblue"
+          : "5px solid lightgreen",
+    };
+  }
+
+  onFinish = (e) => {
+    e.preventDefault();
+    alert("Todo finished");
+    this.props.finished(this.props.todo);
   };
 
-  console.log(props);
-
-  return (
-    <div style={TodoItemStyles}>
-      <span>
-        <input type="checkbox" style={{ marginRight: 10 }}></input>
-      </span>
-      <span>{props.todo.desc}</span>
-    </div>
-  );
-};
+  render() {
+    return (
+      <div style={this.getStyles()}>
+        <span>{this.props.todo.desc}</span>
+        <span>
+          <button
+            className="btn btn-warning"
+            style={{ float: "right" }}
+            onClick={this.onFinish}
+          >
+            Finish
+          </button>
+        </span>
+      </div>
+    );
+  }
+}
 
 export default TodoItem;

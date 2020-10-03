@@ -4,7 +4,10 @@ const BioData = () => {
   var timeNow = calculateTimeNow();
 
   return (
-    <div className="jumbotron jumbotron-fluid bg-success text-white">
+    <div
+      className="jumbotron jumbotron-fluid"
+      style={{ backgroundColor: "lightgreen" }}
+    >
       <div className="container">
         <h1 className="display-1">
           Hey, <br /> Good {timeNow} <br /> Chaitu Maverick

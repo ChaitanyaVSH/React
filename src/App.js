@@ -41,12 +41,22 @@ class App extends Component {
     });
   };
 
+  returnWrapper() {
+    if (this.state.todos.length === 0)
+      return (
+        <h4 style={{ textAlign: "center" }}>
+          Please add a new item to the checklist
+        </h4>
+      );
+    return <Wrapper todos={this.state.todos} onFinish={this.handleFinish} />;
+  }
+
   render() {
     return (
       <div>
         <BioData />
         <AddTodo onSubmit={this.handleSubmit} />
-        <Wrapper todos={this.state.todos} onFinish={this.handleFinish} />
+        {this.returnWrapper()}
       </div>
     );
   }

@@ -21,6 +21,10 @@ class TodoItem extends Component {
   };
 
   render() {
+    // const styles = {
+    //   This const will not create any TS issues.
+    // }
+
     return (
       <div style={this.getStyles()}>
         <span>{this.props.todo.desc}</span>

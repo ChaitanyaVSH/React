@@ -2,9 +2,12 @@ import React, { Component } from "react";
 import "../components/addTodo.css";
 
 class AddTodo extends Component {
-  state = {
-    desc: "",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      desc: "",
+    };
+  }
 
   onChange = (e) => {
     this.setState({
